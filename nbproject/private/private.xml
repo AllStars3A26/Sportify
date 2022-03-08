@@ -3,13 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/entities/tournoi.java</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/modifierTournoi.fxml</file>
             <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/entities/match.java</file>
-            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/services/IService.java</file>
-            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/test/main.java</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/StyleTournoi.css</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/ModifierMatchController.java</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/itemTournoi.fxml</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/TournoiController.java</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/TournoiadherantController.java</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/NewFXMain.java</file>
             <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/services/ServiceMatch.java</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/ChartController.java</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/tournoi.fxml</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/entities/tournoi.java</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/services/IService.java</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/chart.fxml</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/modifierMatch.fxml</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/test/main.java</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/ModifierTournoiController.java</file>
             <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/util/MYDB.java</file>
             <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/services/ServiceTournoi.java</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/tournoiadherant.fxml</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/ItemTournoiController.java</file>
         </group>
     </open-files>
 </project-private>

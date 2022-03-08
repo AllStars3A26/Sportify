@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import util.MYDB;
+import java.util.Collections;
 /**
  *
  * @author Sahar Zouari
@@ -25,16 +26,41 @@ public class ServiceMatch implements IService<match> {
         cnx = MYDB.getInstance().getConnection();
     }
 
+      public int id_auto()
+    { int j=1;
+       boolean test = false;
+        ArrayList st = new ArrayList<>();
+        try {
+            String requete = "SELECT id_match FROM SPORTIFY.match";
+            Statement s = cnx.createStatement();
+            ResultSet rs =  s.executeQuery(requete);
+            while(rs.next()){
+               st.add(rs.getInt("id_match"));}
+            Collections.sort(st);
+            for(int i=0;i<st.size() && test==false;i++)
+            {int b= (int)st.get(i);
+               if(j<b)
+                    test= true;
+                else
+                  j++;
+            };
+         } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return j;
+    }
+    
     @Override
     public void ajouter(match t) {
                 String sql="insert into sportify.match(id_match,id_equipe1,id_equipe2,date_match,resultat_match) values(?,?,?,?,?)";
         try {
-           
+            int nextId = id_auto();
             PreparedStatement ste= cnx.prepareStatement(sql);
-            ste.setInt(1, t.getId_match());
+            java.sql.Date d = new java.sql.Date(t.getDate_match().getTime());
+            ste.setInt(1,nextId);
             ste.setInt(2, t.getId_equipe1());
             ste.setInt(3, t.getId_equipe2());
-            ste.setString(4, t.getDate_match());
+            ste.setDate(4,d);
             ste.setInt(5, t.getResultat_match());
             ste.executeUpdate();
             System.out.println("Match Ajouté");
@@ -49,10 +75,10 @@ public class ServiceMatch implements IService<match> {
    try{
             String req = "UPDATE sportify.match SET id_equipe1 = ?, id_equipe2 = ?, date_match= ?, resultat_match= ? WHERE id_match= ?";
         PreparedStatement ps = cnx.prepareStatement(req);
-       
+        java.sql.Date d = new java.sql.Date(t.getDate_match().getTime());
         ps.setInt(1,t.getId_equipe1());
         ps.setInt(2,t.getId_equipe2());
-        ps.setString(3,t.getDate_match());
+        ps.setDate(3,d);
         ps.setInt(4,t.getResultat_match());
         ps.setInt(5,t.getId_match());
          System.out.println("Modification...");
@@ -91,7 +117,33 @@ ps.executeUpdate();
               m.setId_match(rs.getInt(1));
               m.setId_equipe1(rs.getInt(2));
               m.setId_equipe2(rs.getInt(3));
-              m.setDate_match(rs.getString(4));
+              m.setDate_match(rs.getDate(4));
+              m.setResultat_match(rs.getInt(5));
+              
+                
+                list.add(m);
+            }
+    }
+
+  
+        catch(SQLException m){
+            
+        }
+        return list ;   }
+    
+       public List<match> afficherId(int id) {
+             List<match> list = new ArrayList<>();
+        try{
+            String req = "SELECT * FROM sportify.match where id_match="+id;
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            
+            while(rs.next()){
+                match m = new match();
+              m.setId_match(rs.getInt(1));
+              m.setId_equipe1(rs.getInt(2));
+              m.setId_equipe2(rs.getInt(3));
+              m.setDate_match(rs.getDate(4));
               m.setResultat_match(rs.getInt(5));
               
                 

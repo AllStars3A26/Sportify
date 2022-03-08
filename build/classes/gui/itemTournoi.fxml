@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="151.0" prefWidth="571.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ItemTournoiController">
+   <children>
+      <HBox prefHeight="142.0" prefWidth="571.0" spacing="26.0" style="-fx-background-color: #FFF;">
+         <children>
+            <AnchorPane fx:id="t1" prefHeight="142.0" prefWidth="118.0" style="-fx-background-color: #0B1679; -fx-background-radius: 20;">
+               <children>
+                  <VBox prefHeight="162.0" prefWidth="118.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                     <children>
+                        <ImageView fx:id="imaget1" fitHeight="64.0" fitWidth="78.0" pickOnBounds="true">
+                           <VBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label fx:id="labelt1" accessibleRole="TEXT_FIELD" alignment="CENTER" prefHeight="35.0" prefWidth="118.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="numt1" accessibleRole="TEXT_FIELD" alignment="CENTER" prefHeight="35.0" prefWidth="118.0" textFill="WHITE" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="t2" prefHeight="142.0" prefWidth="118.0" style="-fx-background-color: #0B1679; -fx-border-radius: 20; -fx-background-radius: 20;">
+               <children>
+                  <VBox prefHeight="162.0" prefWidth="118.0">
+                     <children>
+                        <ImageView fx:id="imaget2" fitHeight="64.0" fitWidth="78.0" pickOnBounds="true">
+                           <VBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label fx:id="labelt2" alignment="CENTER" prefHeight="35.0" prefWidth="118.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="numt2" alignment="CENTER" prefHeight="35.0" prefWidth="118.0" textFill="WHITE" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="t3" prefHeight="142.0" prefWidth="118.0" style="-fx-background-color: #0B1679; -fx-background-radius: 20;">
+               <children>
+                  <VBox prefHeight="162.0" prefWidth="118.0">
+                     <children>
+                        <ImageView fx:id="imaget3" fitHeight="64.0" fitWidth="78.0" pickOnBounds="true">
+                           <VBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label fx:id="labelt3" alignment="CENTER" prefHeight="35.0" prefWidth="118.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="numt3" alignment="CENTER" prefHeight="35.0" prefWidth="118.0" textFill="WHITE" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="t4" prefHeight="142.0" prefWidth="118.0" style="-fx-background-color: #0B1679; -fx-background-radius: 20;">
+               <children>
+                  <VBox prefHeight="162.0" prefWidth="118.0">
+                     <children>
+                        <ImageView fx:id="imaget4" fitHeight="64.0" fitWidth="78.0" pickOnBounds="true">
+                           <VBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label fx:id="labelt4" alignment="CENTER" prefHeight="35.0" prefWidth="118.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="numt4" alignment="CENTER" prefHeight="35.0" prefWidth="118.0" textFill="WHITE" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -12,23 +12,30 @@ import entities.tournoi;
 import java.util.Date;
 import java.time.ZoneId;
 import services.ServiceTournoi;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 /**
  *
  * @author Sahar Zouari
  */
 public class main {
-   public static void main(String[] args) {
+   public static void main(String[] args) throws ParseException{
          
          
          MYDB.getInstance();
-   
-      //tournoi t = new tournoi(40,"sahar","20/20/20",50,"pdp",40);
-        //match m = new match(1,13,14,"dater",13);
-      //ServiceTournoi tt=new ServiceTournoi();
-            //ServiceMatch M=new ServiceMatch();
-        //tt.supprimer(t);
-          //M.supprimer(m);
-          
+     SimpleDateFormat d = new SimpleDateFormat("yyyy/MM/dd");
+         Date date =d.parse("2022/01/05");
+         //   tournoi t = new tournoi(40,"sahar",date,50,"pdp",40);
+     // match m = new match(13,14,date,13);
+      ServiceTournoi tt=new ServiceTournoi();
+      ServiceMatch M=new ServiceMatch();
+     // M.id_auto();
+     // tt.ajouter(t);
+     
+             
+                     
+      //M.ajouter(m);
+      System.out.println(tt.afficher());
    }
    
 }
