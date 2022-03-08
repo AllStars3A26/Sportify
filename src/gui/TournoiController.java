@@ -39,6 +39,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -410,7 +411,7 @@ public class TournoiController implements Initializable {
             Scene scene = new Scene(root);
            Stage modifStage = new Stage();
             
-            modifStage.setTitle("Hello World!");
+            modifStage.setTitle("Hello World");
             modifStage.setScene(scene);
             modifStage.show();
             modifStage.setOnHidden(e -> {
@@ -534,16 +535,17 @@ public class TournoiController implements Initializable {
     @FXML
     private void showchart(ActionEvent event) {
         try {
-            
+            ObservableList<tournoi> data=FXCollections.observableArrayList(lt);
             FXMLLoader chart= new FXMLLoader(getClass().getResource("chart.fxml"));
             Parent root = chart.load();
             ChartController mc = chart.getController();
-           
+          
+        mc.setReclamationData(data);
            
             Scene scene = new Scene(root);
            Stage modifStage = new Stage();
             
-            modifStage.setTitle("Hello World!");
+            modifStage.setTitle("Statistiques");
             modifStage.setScene(scene);
             modifStage.show();
             
@@ -787,8 +789,8 @@ public class TournoiController implements Initializable {
     
       @FXML
     public void exportExcel() throws FileNotFoundException, IOException, SQLException{
-        Connection cnx = MYDB.getInstance().getConnection();
-        String query = "Select * from tournoi";
+Connection cnx = MYDB.getInstance().getConnection();
+        String query = "select p.*,t.nom_tournoi,e.nom_equipe from tournoi t ,equipe e,participants_tournoi p WHERE (p.id_tournoi=t.id_tournoi) AND (p.id_equipe=e.id_equipe)";
          PreparedStatement pst = cnx.prepareStatement(query);
             ResultSet rs = pst.executeQuery();
             
@@ -796,18 +798,18 @@ public class TournoiController implements Initializable {
             XSSFWorkbook wb = new XSSFWorkbook();
             XSSFSheet sheet = wb.createSheet("Détails Activités");
             XSSFRow header = sheet.createRow(0);
-            header.createCell(0).setCellValue("nom_tournoi");
-            header.createCell(1).setCellValue("resultat_tournoi");
-            header.createCell(2).setCellValue("nb_participants");
-            header.createCell(3).setCellValue("heure");
+            header.createCell(0).setCellValue("id_tournoi");
+            header.createCell(1).setCellValue("nom_tournoi");
+            header.createCell(2).setCellValue("id_equipe");
+            header.createCell(3).setCellValue("nom_equipe");
             
             int index = 1;
             while(rs.next()){
                 XSSFRow row = sheet.createRow(index);
-                row.createCell(0).setCellValue(rs.getString("nom_tournoi"));
-                row.createCell(1).setCellValue(String.valueOf(rs.getInt("resultat_tournoi")));
-                row.createCell(2).setCellValue(rs.getString("nb_participants"));
-                row.createCell(3).setCellValue(String.valueOf(rs.getInt("heure")));
+                row.createCell(0).setCellValue(String.valueOf(rs.getInt("id_tournoi")));
+                row.createCell(1).setCellValue(rs.getString("nom_tournoi"));
+                row.createCell(2).setCellValue(String.valueOf(rs.getInt("id_equipe")));
+                row.createCell(3).setCellValue(rs.getString("nom_equipe"));
                 index++;
             }
             
@@ -815,13 +817,17 @@ public class TournoiController implements Initializable {
             wb.write(file);
             file.close();
             
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
             alert.setHeaderText(null);
             alert.setContentText("Exportation effectuée!!!");
             alert.showAndWait();
             pst.close();
             rs.close();
+            
+            File myfFile = new File("C:/Users/Sahar Zouari/Documents/NetBeansProjects/SPORTIFY/Détails Activités.xlsx");
+            Desktop.getDesktop().open(myfFile);
+           
     }
   
 }

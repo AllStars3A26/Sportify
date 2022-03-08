@@ -133,6 +133,18 @@ public class tournoi {
     public String toString() {
         return "tournoi{" + "id_tournoi=" + id_tournoi + ", nom_tournoi=" + nom_tournoi + ", date_tournoi=" + date_tournoi + ", nb_participants=" + nb_participants + ", image_tournoi=" + image_tournoi + ", resultat_tournoi=" + resultat_tournoi + '}';
     }
+
+    public void setNom_equipe(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setId_participant(int aInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setId_equipe(int aInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }
