@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="618.0" prefWidth="891.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="gui.Home_adminController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="2.0" prefHeight="660.0" prefWidth="1101.0">
+         <children>
+            <VBox layoutX="-2.0" layoutY="-6.0" prefHeight="676.0" prefWidth="278.0" style="-fx-background-color: #0B1679;">
+               <children>
+                  <Circle fx:id="photo" fill="DODGERBLUE" radius="39.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0">
+                     <VBox.margin>
+                        <Insets left="73.0" top="85.0" />
+                     </VBox.margin>
+                  </Circle>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="228.0" text="User" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="30.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Home">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/home_24px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <stylesheets>
+                        <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                        <URL value="@StyleTournoi.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Equipe/Terrain">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Downloads/valorantESport/src/images/player_change_30px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
+                     <stylesheets>
+                        <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                        <URL value="@StyleTournoi.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Tournoi/Match">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/tournament_30px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
+                     <stylesheets>
+                        <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                        <URL value="@StyleTournoi.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Produit/Commande">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Downloads/valorantESport/src/images/shopping_bag_full_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
+                     <stylesheets>
+                        <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                        <URL value="@StyleTournoi.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Evenement/Ticket">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Downloads/valorantESport/src/images/event_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
+                     <stylesheets>
+                        <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                        <URL value="@StyleTournoi.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="279.0" styleClass="button1" text="Séance/cours">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/news_24px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="70.0" />
+                     </VBox.margin>
+                     <stylesheets>
+                        <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                        <URL value="@StyleTournoi.css" />
+                        <URL value="@StyleTournoi.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="279.0" styleClass="button1" text="Sign Out">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Downloads/valorantESport/src/images/logout_rounded_left_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
+                     <stylesheets>
+                        <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                        <URL value="@StyleTournoi.css" />
+                     </stylesheets>
+                  </Button>
+               </children>
+            </VBox>
+            <AnchorPane layoutX="277.0" layoutY="1.0" prefHeight="670.0" prefWidth="824.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
