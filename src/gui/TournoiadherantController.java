@@ -4,6 +4,7 @@
  */
 package gui;
 
+import entities.match;
 import entities.tournoi;
 import java.io.IOException;
 import java.net.URL;
@@ -25,7 +26,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import services.ServiceMatch;
 import services.ServiceTournoi;
 
 /**
@@ -50,11 +53,12 @@ public class TournoiadherantController implements Initializable {
 @FXML
   private TextField loadtnum;
 
-    @FXML
-    private Label datet;
-      @FXML
-    private Label nbt;
-
+@FXML
+  private Label datet;
+@FXML
+  private Label nbt;
+@FXML
+  private VBox vboxmatch;
     /**
      * Initializes the controller class.
      */
@@ -64,7 +68,7 @@ public class TournoiadherantController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-   
+        System.out.println("cc");
             
           ServiceTournoi ss = new ServiceTournoi();
             List<tournoi> ltt = ss.afficher();
@@ -83,7 +87,7 @@ public class TournoiadherantController implements Initializable {
             Node [] nodes = new Node[nbr];
             Button[] infot = new Button[nbr+3];
             for (int i=0;i<nbr;i++)
-            {
+            {    System.out.println("1");
                 
                    try {
                    FXMLLoader loader = new FXMLLoader(getClass().getResource("itemTournoi.fxml"));
@@ -106,7 +110,7 @@ public class TournoiadherantController implements Initializable {
                   dac.set4();  
                 }
                String s=String.valueOf(nbreste);
-               dac.t1modif(s,ltt);
+              // dac.t1modif(s,ltt);
                     nodes[i]=root;
                     vbox.getChildren().add(nodes[i]);
     //                    int id =dac.boutton (i);
@@ -142,7 +146,94 @@ public class TournoiadherantController implements Initializable {
           });
           
 
+       ServiceMatch M = new ServiceMatch();
+                List<match> lmm= M.afficher();
+            DateFormat dtf= new SimpleDateFormat("yyyy-mm-dd"); 
+            
+            
+          
+           HBox hb[]= new HBox[lmm.size()];
+          Label[] equipe0=new Label[lmm.size()];
+          Label[] equipe00=new Label[lmm.size()];
+            Label[] equipe1=new Label[lmm.size()];
         
+        Label[] vs=new Label[lmm.size()];
+        
+        Label[] equipe2=new Label[lmm.size()];
+        
+        Label[] date=new Label[lmm.size()];
+        Label[] date1=new Label[lmm.size()];
+        Label[] score=new Label[lmm.size()];
+        Label[] score1=new Label[lmm.size()];
+        
+        Circle[] c = new Circle[lmm.size()];
+        /////////////////////////////////////////////
+         for (int i = 0; i < lmm.size(); i++) {
+             hb[i]=new HBox();
+               String datem = dtf.format(lmm.get(i).getDate_match());
+              equipe0[i]=new Label("    ");
+          equipe00[i]=new Label("               ");
+        equipe1[i]=new Label(M.nom_equipe(lmm.get(i).getId_equipe1()));
+        vs[i]=new Label(" vs ");
+        
+        equipe2[i]=new Label(M.nom_equipe(lmm.get(i).getId_equipe2()));
+      
+        date[i]=new Label("Date: ");
+        date1[i]=new Label(datem);
+        score[i]=new Label("                 Résultat: ");
+        score1[i]=new Label(String.valueOf(lmm.get(i).getResultat_match()));
+        
+        c[i] = new Circle();
+             
+        if (lmm.get(i).getId_equipe1()==lmm.get(i).getResultat_match())
+        {
+           equipe1[i].setStyle("-fx-font-weight:bold;-fx-font-size:16px;-fx-text-fill:#008800 "); 
+           equipe2[i].setStyle("-fx-font-weight:bold;-fx-font-size:16px;-fx-text-fill:#FF0000 ");
+          
+        } 
+        else if (lmm.get(i).getId_equipe2()==lmm.get(i).getResultat_match())
+        {
+           equipe1[i].setStyle("-fx-font-weight:bold;-fx-font-size:16px;-fx-text-fill:#FF0000 "); 
+           equipe2[i].setStyle("-fx-font-weight:bold;-fx-font-size:16px;-fx-text-fill:#008800 ");
+          
+        }
+        else{   
+            System.out.println("ww");
+        }
+        
+             c[i].setRadius(9);
+          hb[i].setSpacing(10);
+           hb[i].setStyle("-fx-min-height:40px");
+                   hb[i].setStyle("-fx-border-color:#000,-fx-border-width:0px;");
+                  c[i].setStyle("-fx-translate-y:4px ");
+        
+         vs[i].setStyle("-fx-font-weight:bold;-fx-font-size:16px ");
+       
+      
+       date[i].setStyle("-fx-font-weight:bold;-fx-font-size:16px;-fx-padding:0px 0px 0px 20px");
+       date1[i].setStyle("-fx-font-weight:bold;-fx-font-size:16px ;-fx-text-fill:#BF3C3C");
+       date[i].setStyle("-fx-font-weight:bold;-fx-font-size:16px ");
+       score1[i].setStyle("-fx-font-weight:bold;-fx-font-size:16px ;-fx-min-width:20px;");
+       score[i].setStyle("-fx-font-weight:bold;-fx-font-size:16px ");
+       
+     
+        //////////////////////////////////////////
+        hb[i].getChildren().add(equipe0[i]);
+        hb[i].getChildren().add(equipe1[i]);
+        hb[i].getChildren().add(vs[i]);
+        hb[i].getChildren().add(equipe2[i]);
+        
+        hb[i].getChildren().add(date[i]);
+        hb[i].getChildren().add(date1[i]);
+        hb[i].getChildren().add(score[i]);
+        hb[i].getChildren().add(score1[i]);
+        
+    
+        hb[i].getChildren().add(equipe00[i]);
+        hb[i].getChildren().add(c[i]);
+         vboxmatch.getChildren().add(hb[i]);
+             System.out.println("zz");
+        } 
        
     }
     

@@ -4,13 +4,22 @@
  * and open the template in the editor.
  */
 package gui;
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import entities.match;
 import entities.tournoi;
 import java.awt.Desktop;
+import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -20,6 +29,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.ZoneId;
 import java.util.Arrays;
 import java.util.Date;
@@ -30,6 +41,7 @@ import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -53,20 +65,25 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import services.ServiceMatch;
 import services.ServiceTournoi;
 import util.MYDB;
+import util.Mail_rec;
 
 /**
  * FXML Controller class
@@ -88,7 +105,7 @@ public class TournoiController implements Initializable {
     @FXML
     private TableColumn<tournoi,Integer> NB_MAX;
     @FXML
-    private TableColumn<tournoi,String> IMAGE;
+    private TableColumn<tournoi,ImageView> IMAGE;
     @FXML
     private TableColumn<tournoi,Date> DATE;
     @FXML
@@ -193,6 +210,20 @@ public class TournoiController implements Initializable {
     @FXML
             private TabPane tabp;
     int modee=1;
+   
+      public static final String ACCOUNT_SID = "AC6cba527d728e15afa4914a88f33e1800";
+    public static final String AUTH_TOKEN = "ef4d8471fb53b323f88be4863caeba73";
+    @FXML
+    void sms(ActionEvent event) {
+              
+        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+        Message message = Message.creator(new com.twilio.type.PhoneNumber("+21650745839"),
+                new com.twilio.type.PhoneNumber("+16626678504"),
+                " votre demande est confirmée " ).create();
+
+        System.out.println(message.getSid());
+    
+    }
     
     @FXML
     void mode(ActionEvent event) {
@@ -276,10 +307,10 @@ public class TournoiController implements Initializable {
      
      
     
-    Button[] modify_button = new Button[100];
-       Button[] supprimerb = new Button[100];
-       Button[] modify_button1 = new Button[100];
-       Button[] supprimerb1 = new Button[100];
+    Button[] modify_button = new Button[lt.size()];
+       Button[] supprimerb = new Button[lt.size()];
+       Button[] modify_button1 = new Button[lm.size()];
+       Button[] supprimerb1 = new Button[lm.size()];
         int index=101; 
          
           private void handleButtonAction1 (ActionEvent event)
@@ -331,7 +362,7 @@ public class TournoiController implements Initializable {
             Scene scene = new Scene(root);
            Stage modifStage = new Stage();
             
-            modifStage.setTitle("Hello World!");
+            modifStage.setTitle("modifier!");
             modifStage.setScene(scene);
             modifStage.show();
             modifStage.setOnHidden(e -> {
@@ -411,7 +442,7 @@ public class TournoiController implements Initializable {
             Scene scene = new Scene(root);
            Stage modifStage = new Stage();
             
-            modifStage.setTitle("Hello World");
+            modifStage.setTitle("Modifier Tournoi");
             modifStage.setScene(scene);
             modifStage.show();
             modifStage.setOnHidden(e -> {
@@ -446,7 +477,74 @@ public class TournoiController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      
+      tableTournoi.setOnMouseClicked(ev -> {
+              
+                  
+          if (ev.getButton().equals(MouseButton.PRIMARY) && ev.getClickCount() == 2) {
+                String nom_p = tableTournoi.getSelectionModel().getSelectedItem().getNom_tournoi();
+                 int  nb_p = tableTournoi.getSelectionModel().getSelectedItem().getNb_participants();
+                int resultat = tableTournoi.getSelectionModel().getSelectedItem().getResultat_tournoi();
+             
+                DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");  
+             String strDate = dateFormat.format(tableTournoi.getSelectionModel().getSelectedItem().getDate_tournoi()); 
+                int heure = tableTournoi.getSelectionModel().getSelectedItem().getHeure();
+               
+                String AllInfo = " nom tournoi :       " + nom_p + "\nRésultat:       " + resultat +  "\nNb_participants:         " + nb_p +"\n  Date:          "+strDate+" à "+heure+"h";
+                ////////////////////////:
+               QRCodeWriter qrCodeWriter = new QRCodeWriter();
+            
+           
+            int width = 300;
+            int height = 300;
+            
+            BufferedImage bufferedImage = null;
+            try {
+                BitMatrix byteMatrix = qrCodeWriter.encode(AllInfo, BarcodeFormat.QR_CODE, width, height);
+                bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+                bufferedImage.createGraphics();
+                
+                Graphics2D image = (Graphics2D) bufferedImage.getGraphics();
+                image.setColor(java.awt.Color.WHITE);
+                image.fillRect(0, 0, width, height);
+                image.setColor(java.awt.Color.BLACK);
+                
+                for (int i = 0; i < height; i++) {
+                    for (int j = 0; j < width; j++) {
+                        if (byteMatrix.get(i, j)) {
+                            image.fillRect(i, j, 1, 1);
+                        }
+                    }
+                }
+                
+                System.out.println("QR created successfully....");
+                
+            } catch (WriterException ex) {
+                 //Todo
+            }
+            
+            ImageView qr = new ImageView();
+            qr.setImage(SwingFXUtils.toFXImage(bufferedImage, null));
+            
+            StackPane obj = new StackPane();
+            obj.getChildren().add(qr);
+            Scene scene = new Scene(obj, 300, 250);
+            Stage p1 = new Stage();
+            p1.setTitle("QRCode");
+            p1.setScene(scene);
+            p1.show();
+            WritableImage writableImage = new WritableImage(300,250);
+                scene.snapshot(writableImage);
+                File imageFile = new File("screenshotqr/screenshot.png");
+              try {
+                  ImageIO.write(bufferedImage,"png", imageFile);
+              } catch (IOException ex) {
+                  Logger.getLogger(TournoiController.class.getName()).log(Level.SEVERE, null, ex);
+              }
+                   
+                }
+            
+              
+        });
 
         photo.setStroke(Color.SEAGREEN);
         Image im = new Image("/images/1.png", false);
@@ -507,12 +605,13 @@ public class TournoiController implements Initializable {
 //        nbt.setText(String.valueOf(nbtt));
         
          ObservableList<tournoi> datalist = FXCollections.observableArrayList(lt);
-        
+      
+       
           NOM.setCellValueFactory(new PropertyValueFactory<>("nom_tournoi"));
         DATE.setCellValueFactory(new PropertyValueFactory<>("date_tournoi"));
         RESULTAT.setCellValueFactory(new PropertyValueFactory<>("resultat_tournoi"));
         NB_MAX.setCellValueFactory(new PropertyValueFactory<>("nb_participants"));
-        IMAGE.setCellValueFactory(new PropertyValueFactory<>("image_tournoi"));
+        IMAGE.setCellValueFactory(new PropertyValueFactory<>("img"));
         MODIFIER.setCellValueFactory(new PropertyValueFactory<>("modifier"));
         SUPPRIMER.setCellValueFactory(new PropertyValueFactory<>("supprimer"));
         ID.setCellValueFactory(new PropertyValueFactory<>("id_tournoi"));
@@ -693,6 +792,7 @@ public class TournoiController implements Initializable {
         
         
             sp.ajouter(t);
+          
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setContentText("Tournoi ajouté!");
@@ -732,7 +832,7 @@ public class TournoiController implements Initializable {
         DATE.setCellValueFactory(new PropertyValueFactory<>("date_tournoi"));
         RESULTAT.setCellValueFactory(new PropertyValueFactory<>("resultat_tournoi"));
         NB_MAX.setCellValueFactory(new PropertyValueFactory<>("nb_participants"));
-        IMAGE.setCellValueFactory(new PropertyValueFactory<>("image_tournoi"));
+        IMAGE.setCellValueFactory(new PropertyValueFactory<>("img"));
         MODIFIER.setCellValueFactory(new PropertyValueFactory<>("modifier"));
         SUPPRIMER.setCellValueFactory(new PropertyValueFactory<>("supprimer"));
         ID.setCellValueFactory(new PropertyValueFactory<>("id_tournoi"));
@@ -829,5 +929,5 @@ Connection cnx = MYDB.getInstance().getConnection();
             Desktop.getDesktop().open(myfFile);
            
     }
-  
+   
 }

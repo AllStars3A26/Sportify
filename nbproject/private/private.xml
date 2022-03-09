@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/modifierTournoi.fxml</file>
             <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/entities/match.java</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/util/Mail_rec.java</file>
             <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/StyleTournoi.css</file>
             <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/ModifierMatchController.java</file>
             <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/itemTournoi.fxml</file>
@@ -12,6 +13,8 @@
             <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/TournoiadherantController.java</file>
             <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/NewFXMain.java</file>
             <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/services/ServiceMatch.java</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/entities/ParticipantsTournoi.java</file>
+            <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/services/ServiceParticipant.java</file>
             <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/ChartController.java</file>
             <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/gui/tournoi.fxml</file>
             <file>file:/C:/Users/Sahar%20Zouari/Documents/NetBeansProjects/SPORTIFY/src/entities/tournoi.java</file>

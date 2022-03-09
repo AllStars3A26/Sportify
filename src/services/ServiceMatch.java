@@ -156,6 +156,27 @@ ps.executeUpdate();
             
         }
         return list ;   }
-    
+       public String nom_equipe(int id) {
+        List <match> st = new ArrayList<>();
+        String nom="";
+        try {
+            String requete = "SELECT nom_equipe FROM equipe where id_equipe="+id;
+            Statement s = cnx.createStatement();
+            ResultSet rs =  s.executeQuery(requete);
+            while(rs.next()){
+                match c = new match();
+             
+               nom= rs.getString("nom_equipe");
+               
+               
+          
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return nom;
+    }
 }
+    
+
     

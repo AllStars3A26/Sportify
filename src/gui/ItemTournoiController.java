@@ -93,19 +93,21 @@ public class ItemTournoiController implements Initializable {
      
      
       public void afficher (List<tournoi> lt,int i)
-    {
+   {  System.out.println("ll");
         Image imt1 = new Image(getClass().getResourceAsStream(lt.get(i*4).getImage_tournoi()));
         this.imaget1.setImage(imt1);
         this.labelt1.setText(lt.get(i*4).getNom_tournoi());
         this.numt1.setText("num "+String.valueOf(i*4+1));
+        System.out.println(lt.get(i*4).getImage_tournoi());
        
         
         if((lt.size()> i*4+1))
-        {
+        {    
             Image imt2 = new Image(getClass().getResourceAsStream(lt.get(i*4+1).getImage_tournoi()));
           this.imaget2.setImage(imt2);
            this.labelt2.setText(lt.get(i*4+1).getNom_tournoi());
            this.numt2.setText("num "+String.valueOf(i*4+2));
+           System.out.println(lt.get(i*4+1).getImage_tournoi());
         }
          if((lt.size()> i*4+2))
         { 
@@ -122,6 +124,7 @@ public class ItemTournoiController implements Initializable {
         this.labelt4.setText(lt.get(i*4+3).getNom_tournoi());
         this.numt4.setText("num "+String.valueOf(i*4+4));
         }
+          
     }
 
      

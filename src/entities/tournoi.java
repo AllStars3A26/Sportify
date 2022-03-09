@@ -6,6 +6,8 @@
 package entities;
 import java.util.Date;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 /**
  *
  * @author Sahar Zouari
@@ -20,6 +22,7 @@ public class tournoi {
     private int heure;
      private Button modifier;
     private Button supprimer;
+    private ImageView img;
     
   
 
@@ -87,6 +90,16 @@ public class tournoi {
         return supprimer;
     }
 
+    public ImageView getImg() {
+        return img;
+    }
+
+    public void setImg(ImageView img) {
+        this.img = img;
+    }
+
+    
+
    
 
     public int getId_tournoi() {
@@ -131,8 +144,10 @@ public class tournoi {
 
     @Override
     public String toString() {
-        return "tournoi{" + "id_tournoi=" + id_tournoi + ", nom_tournoi=" + nom_tournoi + ", date_tournoi=" + date_tournoi + ", nb_participants=" + nb_participants + ", image_tournoi=" + image_tournoi + ", resultat_tournoi=" + resultat_tournoi + '}';
+        return "tournoi{" + "id_tournoi=" + id_tournoi + ", nom_tournoi=" + nom_tournoi + ", date_tournoi=" + date_tournoi + ", nb_participants=" + nb_participants + ", image_tournoi=" + image_tournoi + ", resultat_tournoi=" + resultat_tournoi + ", heure=" + heure + ", modifier=" + modifier + ", supprimer=" + supprimer + ", img=" + img + '}';
     }
+
+   
 
     public void setNom_equipe(String string) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

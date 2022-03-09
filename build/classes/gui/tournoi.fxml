@@ -226,7 +226,7 @@
                               <TableColumn fx:id="DATE" prefWidth="79.66665649414062" text="Date" />
                               <TableColumn fx:id="RESULTAT" prefWidth="71.6666259765625" text="Resultat" />
                               <TableColumn fx:id="NB_MAX" prefWidth="106.0" text="NB_Participants" />
-                              <TableColumn fx:id="IMAGE" prefWidth="89.0" text="IMAGE" />
+                              <TableColumn fx:id="IMAGE" maxWidth="50.0" prefWidth="89.0" text="IMAGE" />
                               <TableColumn fx:id="MODIFIER" minWidth="0.0" prefWidth="66.6666259765625" text="MODIFIER" />
                               <TableColumn fx:id="SUPPRIMER" minWidth="0.0" prefWidth="78.39990234375" text="SUPPRIMER" />
                               <TableColumn fx:id="ID" minWidth="0.800048828125" prefWidth="0.800048828125" text="id" visible="false" />
@@ -391,8 +391,9 @@
             <URL value="@StyleTournoi.css" />
          </stylesheets>
       </TabPane>
-      <Button layoutX="970.0" layoutY="5.0" mnemonicParsing="false" onAction="#mode" stylesheets="@StyleTournoi.css" text="Dark mode" />
+      <Button layoutX="970.0" layoutY="7.0" mnemonicParsing="false" onAction="#mode" stylesheets="@StyleTournoi.css" text="Dark mode" />
       <Button layoutX="969.0" layoutY="50.0" mnemonicParsing="false" onAction="#showchart" stylesheets="@StyleTournoi.css" text="Statistiques" />
-      <Button layoutX="967.0" layoutY="96.0" mnemonicParsing="false" onAction="#exportExcel" prefHeight="25.0" prefWidth="82.0" stylesheets="@StyleTournoi.css" text="Excel" />
+      <Button layoutX="969.0" layoutY="96.0" mnemonicParsing="false" onAction="#exportExcel" prefHeight="25.0" prefWidth="82.0" stylesheets="@StyleTournoi.css" text="Excel" />
+      <Button layoutX="971.0" layoutY="142.0" mnemonicParsing="false" onAction="#sms" prefHeight="25.0" prefWidth="82.0" stylesheets="@StyleTournoi.css" text="SMS" />
    </children>
 </AnchorPane>

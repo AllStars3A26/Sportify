@@ -16,6 +16,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 /**
  *
  * @author Sahar Zouari
@@ -124,17 +126,23 @@ ps.executeUpdate();
             String requete = "SELECT * FROM tournoi";
             Statement s = cnx.createStatement();
             ResultSet rs =  s.executeQuery(requete);
+            int i=0;
+             ImageView[] im = new ImageView[500];
             while(rs.next()){
                 tournoi c = new tournoi();
                 c.setId_tournoi(rs.getInt("id_tournoi"));
                 c.setNom_tournoi(rs.getString("nom_tournoi"));
-                 c.setDate_tournoi(rs.getDate("date_tournoi")); 
-                  c.setResultat_tournoi(rs.getInt("resultat_tournoi"));
-                  c.setHeure(rs.getInt("heure"));
+                c.setDate_tournoi(rs.getDate("date_tournoi")); 
+                c.setResultat_tournoi(rs.getInt("resultat_tournoi"));
+                c.setHeure(rs.getInt("heure"));
                 c.setNb_participants(rs.getInt("nb_participants"));
                 c.setImage_tournoi(rs.getString("image_tournoi"));
                
-              
+               im[i] = new ImageView(new Image(getClass().getResourceAsStream(rs.getString("image_tournoi"))));
+                im[i].setFitHeight(50);
+                im[i].setFitWidth(50);
+               c.setImg(im[i]);
+              i++;
                
                 st.add(c);
             }
@@ -149,6 +157,8 @@ ps.executeUpdate();
             String requete = "SELECT * FROM tournoi where id_tournoi="+id;
             Statement s = cnx.createStatement();
             ResultSet rs =  s.executeQuery(requete);
+            ImageView[] im = new ImageView[500];
+            int i=0;
             while(rs.next()){
                 tournoi c = new tournoi();
                 c.setId_tournoi(rs.getInt("id_tournoi"));
@@ -159,7 +169,6 @@ ps.executeUpdate();
                 c.setNb_participants(rs.getInt("nb_participants"));
                 c.setImage_tournoi(rs.getString("image_tournoi"));
                
-              
                
                 st.add(c);
             }
@@ -172,4 +181,23 @@ ps.executeUpdate();
    {
        return l.size();
    }
+      public List<String> mail()
+    {
+         
+        List <String> st = new ArrayList<>();
+        try {
+            String requete = "SELECT email FROM utilisateur";
+            Statement s = cnx.createStatement();
+            ResultSet rs =  s.executeQuery(requete);
+            while(rs.next()){
+               
+               
+                st.add(rs.getString("email"));
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return st;
+    }
+      
 }
