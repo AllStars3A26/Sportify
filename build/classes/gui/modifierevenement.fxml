@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ModifierevenementController">
+   <children>
+      <TextField fx:id="IDm" layoutX="551.0" layoutY="40.0" prefHeight="26.0" prefWidth="11.0" visible="false" />
+      <AnchorPane layoutX="60.0" layoutY="46.0" prefHeight="342.0" prefWidth="540.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-radius: 20;" />
+      <Button fx:id="modifyevenement" layoutX="269.0" layoutY="382.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0" stylesheets="@styleTournoi.css" text="modifier" />
+      <TextField fx:id="IDm" layoutX="561.0" layoutY="50.0" prefHeight="26.0" prefWidth="11.0" visible="false" />
+      <Label layoutX="78.0" layoutY="87.0" text="Libelle">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="77.0" layoutY="146.0" text="type">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="getlibelle_E" layoutX="232.0" layoutY="84.0" promptText="type &quot;String&quot;" />
+      <TextField fx:id="gettype_E" layoutX="231.0" layoutY="144.0" promptText="type &quot;String&quot;" />
+      <Label layoutX="80.0" layoutY="203.0" text="date">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="getdate_E" layoutX="220.0" layoutY="210.0" />
+   </children>
+</AnchorPane>

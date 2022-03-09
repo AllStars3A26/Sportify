@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="660.0" prefWidth="1101.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Evenement_ticketController">
+   <children>
+      <VBox layoutX="-2.0" layoutY="-6.0" prefHeight="676.0" prefWidth="278.0" style="-fx-background-color: #0B1679;">
+         <children>
+            <Circle fx:id="photo" fill="DODGERBLUE" radius="39.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0">
+               <VBox.margin>
+                  <Insets left="73.0" top="85.0" />
+               </VBox.margin>
+            </Circle>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="228.0" text="User" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="30.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Home">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/home_24px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Equipe/Terrain">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/valorantESport/src/images/player_change_30px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Tournoi/Match">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/tournament_30px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Produit/Commande">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/valorantESport/src/images/shopping_bag_full_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Evenement/Ticket">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/valorantESport/src/images/event_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="279.0" styleClass="button1" text="Séance/cours">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/news_24px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="70.0" />
+               </VBox.margin>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#sign_out" prefHeight="46.0" prefWidth="279.0" styleClass="button1" text="Sign Out">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/valorantESport/src/images/logout_rounded_left_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+         </children>
+      </VBox>
+      <TabPane layoutX="295.0" layoutY="25.0" prefHeight="538.0" prefWidth="866.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Consulter  evenement">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="936.0">
+                     <children>
+                        <TableView fx:id="tableE" cache="true" layoutX="32.0" layoutY="75.0" onKeyPressed="#recherchetf" onKeyReleased="#searchmethode" prefHeight="318.0" prefWidth="617.0" stylesheets="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css">
+                           <columns>
+                              <TableColumn fx:id="Libelle" prefWidth="70.66665649414062" text="Libelle" />
+                              <TableColumn fx:id="type" prefWidth="79.66665649414062" text="Type" />
+                              <TableColumn fx:id="Date" prefWidth="141.0" text="Date" />
+                              <TableColumn fx:id="MODIFIER" minWidth="0.0" prefWidth="109.0" text="MODIFIER" />
+                              <TableColumn fx:id="SUPPRIMER" minWidth="0.0" prefWidth="150.0" text="SUPPRIMER" />
+                              <TableColumn fx:id="ID" minWidth="0.800048828125" prefWidth="0.800048828125" text="id" visible="false" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="tri" layoutX="71.0" layoutY="459.0" mnemonicParsing="false" onAction="#tri_on_clicked" prefHeight="25.0" prefWidth="153.0" text="tri par nom et type" />
+                        <TextField fx:id="r" layoutX="493.0" layoutY="414.0" onAction="#searchmethode" onKeyReleased="#recherche_avance" promptText="search..." />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Ajouter evenement">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="68.0" layoutY="77.0" text="Libelle">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="67.0" layoutY="136.0" text="type">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="getlibelle_E" layoutX="222.0" layoutY="74.0" promptText="type &quot;String&quot;" />
+                        <TextField fx:id="gettype_E" layoutX="221.0" layoutY="134.0" promptText="type &quot;String&quot;" />
+                        <Button fx:id="ajouter_evenement" layoutX="335.0" layoutY="413.0" mnemonicParsing="false" onAction="#ajouterevenement" prefHeight="26.0" prefWidth="174.0" style="-fx-border-radius: 30;" text="AJOUTER" />
+                        <TextArea fx:id="ima" layoutX="240.0" layoutY="64.0" prefHeight="20.0" prefWidth="94.0" visible="false" />
+                        <Label layoutX="70.0" layoutY="193.0" text="date">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="getdate_E" layoutX="210.0" layoutY="200.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab disable="true" />
+            <Tab text="Consulter  ticket">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="936.0">
+                     <children>
+                        <TableView fx:id="tableT" cache="true" layoutX="55.0" layoutY="71.0" prefHeight="381.0" prefWidth="537.0" stylesheets="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css">
+                           <columns>
+                              <TableColumn fx:id="libelle_t" prefWidth="71.0" text="Liblle" />
+                              <TableColumn fx:id="type_t" prefWidth="61.0" text="Type" />
+                              <TableColumn fx:id="date_t" prefWidth="87.0" text="Date" />
+                              <TableColumn fx:id="prix_t" prefWidth="77.0" text="Prix" />
+                              <TableColumn fx:id="MODIFIER1" minWidth="0.0" text="MODIFIER" />
+                              <TableColumn fx:id="SUPPRIMER1" minWidth="0.0" prefWidth="152.0" text="SUPPRIMER" />
+                              <TableColumn fx:id="ID1" minWidth="0.800048828125" prefWidth="0.800048828125" text="id" visible="false" />
+                           </columns>
+                        </TableView>
+                        <TextField layoutX="489.0" layoutY="30.0" onAction="#searchmethode" onKeyReleased="#searchmethode" promptText="Search....." />
+                        <Button fx:id="tri1" layoutX="303.0" layoutY="460.0" mnemonicParsing="false" onAction="#tri_on_clicked1" prefHeight="25.0" prefWidth="153.0" text="tri par nom et type" />
+                        <Button layoutX="325.0" layoutY="30.0" mnemonicParsing="false" onAction="#showchart" prefHeight="25.0" prefWidth="108.0" text="statistique" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Ajouter ticket">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="162.0" layoutY="107.0" text="Libelle">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="163.0" layoutY="164.0" text="Type">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="170.0" layoutY="266.0" text="Prix">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="getlibelle_t" layoutX="320.0" layoutY="104.0" promptText="type &quot;String&quot;" />
+                        <TextField fx:id="gettype_t" layoutX="320.0" layoutY="162.0" promptText="type &quot;String&quot;" />
+                        <Label layoutX="164.0" layoutY="214.0" text="Date">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="ajouter_ticket" layoutX="335.0" layoutY="413.0" mnemonicParsing="false" onAction="#ajouterticket" prefHeight="26.0" prefWidth="174.0" style="-fx-border-radius: 30;" text="AJOUTER" />
+                        <TextField fx:id="getprix_t" layoutX="321.0" layoutY="267.0" prefHeight="26.0" prefWidth="152.0" />
+                        <DatePicker fx:id="getdate_t" layoutX="310.0" layoutY="211.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+         <stylesheets>
+            <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+            <URL value="@StyleTournoi.css" />
+            <URL value="@StyleTournoi.css" />
+         </stylesheets>
+      </TabPane>
+   </children>
+</AnchorPane>
