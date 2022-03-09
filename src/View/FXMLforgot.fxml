@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="567.0" prefWidth="1041.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLforgotController">
+   <children>
+      <ImageView fitHeight="666.0" fitWidth="658.0" layoutX="203.0" layoutY="-30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@style/274667554_3189703564687147_3733284381749311086_n.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="30.0" layoutY="453.0" mnemonicParsing="false" onAction="#sendcode" prefHeight="70.0" prefWidth="173.0" stylesheets="@../../../../../Desktop/SPORTIFY/src/gui/StyleTournoi.css" text="send via email" />
+      <TextField fx:id="txt_usr" layoutX="332.0" layoutY="174.0" prefHeight="36.0" prefWidth="429.0" />
+      <TextField fx:id="txt_email" layoutX="329.0" layoutY="356.0" prefHeight="36.0" prefWidth="429.0" />
+      <Label fx:id="labelemail" layoutX="206.0" layoutY="265.0" prefHeight="30.0" prefWidth="526.0" text="........." textFill="#110000">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="Reset" layoutX="846.0" layoutY="453.0" mnemonicParsing="false" onAction="#Reset_onclick" prefHeight="70.0" prefWidth="157.0" stylesheets="@../../../../../Desktop/SPORTIFY/src/gui/StyleTournoi.css" text="Reset" />
+      <Label layoutX="185.0" layoutY="176.0" prefHeight="32.0" prefWidth="117.0" text="Email:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="185.0" layoutY="358.0" prefHeight="32.0" prefWidth="71.0" text="Code:" textFill="#170000">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="arrow_tologin" fitHeight="80.0" fitWidth="157.0" layoutX="17.0" layoutY="14.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@style/2454563.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

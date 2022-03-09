@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="660.0" prefWidth="1101.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.terrainController">
+   <children>
+      <VBox layoutX="-2.0" layoutY="-6.0" prefHeight="676.0" prefWidth="278.0" style="-fx-background-color: #0B1679;">
+         <children>
+            <Circle fx:id="photo" fill="DODGERBLUE" radius="39.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0">
+               <VBox.margin>
+                  <Insets left="73.0" top="85.0" />
+               </VBox.margin>
+            </Circle>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="228.0" text="User" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="30.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#return_home" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Home">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/home_24px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Equipe/Terrain">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/valorantESport/src/images/player_change_30px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Tournoi/Match">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/tournament_30px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Produit/Commande">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/valorantESport/src/images/shopping_bag_full_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Evenement/Ticket">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/valorantESport/src/images/event_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="279.0" styleClass="button1" text="Séance/cours">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/news_24px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="70.0" />
+               </VBox.margin>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#sign_out" prefHeight="46.0" prefWidth="279.0" styleClass="button1" text="Sign Out">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/valorantESport/src/images/logout_rounded_left_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+         </children>
+      </VBox>
+      <TabPane layoutX="295.0" layoutY="25.0" prefHeight="538.0" prefWidth="866.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Consulter  terrain">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="936.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" layoutY="14.0" prefHeight="105.0" prefWidth="778.0" spacing="60.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label fx:id="nbt" textFill="#2a73ff">
+                                       <font>
+                                          <Font name="System Bold" size="26.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Terrains">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets left="40.0" />
+                           </padding>
+                        </HBox>
+                        <TableView fx:id="tableTerrain" cache="true" layoutX="14.0" layoutY="133.0" onKeyPressed="#recherchetf" onKeyReleased="#searchmethode" prefHeight="318.0" prefWidth="617.0" stylesheets="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css">
+                           <columns>
+                              <TableColumn fx:id="nom" prefWidth="70.66665649414062" text="Nom" />
+                              <TableColumn fx:id="type" prefWidth="79.66665649414062" text="Type" />
+                              <TableColumn fx:id="description" prefWidth="100.0" text="Description" />
+                              <TableColumn fx:id="adresse" prefWidth="91.0" text="Adresse" />
+                              <TableColumn fx:id="dispo" prefWidth="93.0" text="disponibilité" />
+                              <TableColumn fx:id="MODIFIER" minWidth="0.0" prefWidth="66.6666259765625" text="MODIFIER" />
+                              <TableColumn fx:id="SUPPRIMER" minWidth="0.0" prefWidth="78.39990234375" text="SUPPRIMER" />
+                              <TableColumn fx:id="ID" minWidth="0.800048828125" prefWidth="0.800048828125" text="id" visible="false" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="reload" layoutX="323.0" layoutY="458.0" mnemonicParsing="false" onAction="#reloadd" prefHeight="25.0" prefWidth="98.0" text="reload" />
+                        <Button fx:id="tri" layoutX="71.0" layoutY="459.0" mnemonicParsing="false" onAction="#tri_on_clicked" prefHeight="25.0" prefWidth="153.0" text="tri par nom et type" />
+                        <TextField fx:id="r" layoutX="482.0" layoutY="459.0" onKeyReleased="#recherche_avance" promptText="search..." />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Ajouter terrain">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane layoutX="43.0" layoutY="49.0" prefHeight="368.0" prefWidth="794.0" style="-fx-border-color: #000; -fx-border-radius: 10; -fx-border-image-width: 1;" />
+                        <Label layoutX="68.0" layoutY="77.0" text="Nom">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="67.0" layoutY="136.0" text="type">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="71.0" layoutY="256.0" text="adresse">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="getNom_terrain" layoutX="222.0" layoutY="74.0" promptText="type &quot;String&quot;" />
+                        <TextField fx:id="getType_terrain" layoutX="221.0" layoutY="134.0" promptText="type &quot;String&quot;" />
+                        <TextField fx:id="getDescription_terrain" layoutX="222.0" layoutY="193.0" minWidth="-Infinity" prefHeight="25.0" prefWidth="149.0" promptText="type &quot;String&quot;" />
+                        <Button fx:id="ajouterterrain" layoutX="335.0" layoutY="413.0" mnemonicParsing="false" onAction="#ajouterterrain" prefHeight="26.0" prefWidth="174.0" style="-fx-border-radius: 30;" text="AJOUTER" />
+                        <TextArea fx:id="ima" layoutX="240.0" layoutY="64.0" prefHeight="20.0" prefWidth="94.0" visible="false" />
+                        <Label layoutX="70.0" layoutY="193.0" text="description">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="getAdresse_terrain" layoutX="221.0" layoutY="253.0" minWidth="-Infinity" prefHeight="25.0" prefWidth="149.0" promptText="type &quot;String&quot;" />
+                        <Label layoutX="72.0" layoutY="320.0" text="disponibilté">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="getdispo" layoutX="219.0" layoutY="313.0" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab disable="true" />
+            <Tab text="Consulter  equipe">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="936.0">
+                     <children>
+                        <TableView fx:id="tableEquipe" cache="true" layoutX="99.0" layoutY="65.0" prefHeight="381.0" prefWidth="545.0" stylesheets="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css">
+                           <columns>
+                              <TableColumn fx:id="nom_equipe" prefWidth="58.0" text="nom" />
+                              <TableColumn fx:id="type_equipe" prefWidth="51.0" text="type" />
+                              <TableColumn fx:id="description_equipe" prefWidth="94.0" text="description" />
+                              <TableColumn fx:id="mail_equipe" prefWidth="57.0" text="mail" />
+                              <TableColumn fx:id="nbre_equipe" prefWidth="122.0" text="nombre de joueur" />
+                              <TableColumn fx:id="MODIFIER1" minWidth="0.0" prefWidth="67.20001220703125" text="MODIFIER" />
+                              <TableColumn fx:id="SUPPRIMER1" minWidth="0.0" prefWidth="78.39990234375" text="SUPPRIMER" />
+                              <TableColumn fx:id="ID1" minWidth="0.800048828125" prefWidth="0.800048828125" text="id" visible="false" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="reload1" layoutX="139.0" layoutY="30.0" mnemonicParsing="false" onAction="#reloadd1" prefHeight="25.0" prefWidth="106.0" text="reload" />
+                        <TextField fx:id="search_button1" layoutX="489.0" layoutY="30.0" onKeyReleased="#searchmethode" promptText="Search....." />
+                        <Button fx:id="tri1" layoutX="309.0" layoutY="452.0" mnemonicParsing="false" onAction="#tri_on_clicked1" prefHeight="25.0" prefWidth="153.0" text="tri par nom et type" />
+                        <Button layoutX="325.0" layoutY="30.0" mnemonicParsing="false" onAction="#showchart" prefHeight="25.0" prefWidth="108.0" text="statistique" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Ajouter equipe">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane layoutX="36.0" layoutY="59.0" prefHeight="368.0" prefWidth="794.0" style="-fx-border-color: #000; -fx-border-radius: 10; -fx-border-image-width: 1;" />
+                        <Label layoutX="162.0" layoutY="107.0" text="Nom">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="163.0" layoutY="164.0" text="Type">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="170.0" layoutY="266.0" text="Mail">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="getNom_equipe" layoutX="320.0" layoutY="104.0" promptText="type &quot;String&quot;" />
+                        <TextField fx:id="getType_equipe" layoutX="320.0" layoutY="162.0" promptText="type &quot;String&quot;" />
+                        <Label layoutX="164.0" layoutY="214.0" text="Description">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="ajouterEquipe" layoutX="335.0" layoutY="413.0" mnemonicParsing="false" onAction="#ajouterEquipe" prefHeight="26.0" prefWidth="174.0" style="-fx-border-radius: 30;" text="AJOUTER" />
+                        <Label layoutX="171.0" layoutY="327.0" text="Nombre de joueur">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="getDescription_equipe" layoutX="320.0" layoutY="212.0" prefHeight="26.0" prefWidth="152.0" promptText="type &quot;String&quot;" />
+                        <TextField fx:id="getMail_equipe" layoutX="321.0" layoutY="267.0" prefHeight="26.0" prefWidth="152.0" promptText="exp: aaa.aaa@aaa.aaa" />
+                        <TextField fx:id="getNbre_equipe" layoutX="322.0" layoutY="325.0" prefHeight="26.0" prefWidth="152.0" promptText="type Int" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+         <stylesheets>
+            <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+            <URL value="@StyleTournoi.css" />
+            <URL value="@StyleTournoi.css" />
+         </stylesheets>
+      </TabPane>
+   </children>
+</AnchorPane>
