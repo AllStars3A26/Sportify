@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="principale11" prefHeight="567.0" prefWidth="1041.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Settings1Controller">
+   <children>
+      <VBox layoutX="-2.0" layoutY="-6.0" prefHeight="676.0" prefWidth="278.0" style="-fx-background-color: #0B1679;">
+         <children>
+            <Circle fx:id="photo" fill="DODGERBLUE" radius="39.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0">
+               <VBox.margin>
+                  <Insets left="73.0" top="85.0" />
+               </VBox.margin>
+            </Circle>
+            <Label fx:id="label22" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="279.0" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="30.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#seanceswitch" prefHeight="46.0" prefWidth="279.0" styleClass="button1" text="Séance/cours">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/news_24px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="70.0" />
+               </VBox.margin>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@../guiADMINDISPLAY/StyleTournoi.css" />
+                  <URL value="@../guiADMINDISPLAY/StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#settings" prefHeight="46.0" prefWidth="278.0" styleClass="button1" text="Settings">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Sample_User_Icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@../guiADMINDISPLAY/StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#log_out" prefHeight="46.0" prefWidth="279.0" styleClass="button1" text="Sign Out">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/sign-out-icon-10.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <stylesheets>
+                  <URL value="@../../../../../Downloads/valorantESport/src/gui/styleTournoi.css" />
+                  <URL value="@../guiADMINDISPLAY/StyleTournoi.css" />
+               </stylesheets>
+            </Button>
+         </children>
+      </VBox>
+      <Label layoutX="1130.0" layoutY="6.0" onMouseClicked="#closeapp" text="X">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="283.0" layoutY="46.0" minHeight="0.0" minWidth="0.0" prefHeight="516.0" prefWidth="865.0">
+         <children>
+            <Label layoutX="71.0" layoutY="48.0" prefHeight="19.0" prefWidth="78.0" text="Nom">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="69.0" layoutY="186.0" prefHeight="19.0" prefWidth="63.0" text="Adresse">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Nom_E" editable="false" layoutX="201.0" layoutY="45.0" />
+            <TextField fx:id="Prenom_E" editable="false" layoutX="201.0" layoutY="114.0" />
+            <TextField fx:id="Adresse_E" layoutX="201.0" layoutY="183.0" minWidth="-Infinity" prefHeight="25.0" prefWidth="149.0" />
+            <TextArea fx:id="ima" layoutX="240.0" layoutY="64.0" prefHeight="20.0" prefWidth="94.0" visible="false" />
+            <Label layoutX="76.0" layoutY="250.0" text="Username">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Username_E" layoutX="201.0" layoutY="247.0" minWidth="-Infinity" prefHeight="25.0" prefWidth="149.0" />
+            <Button fx:id="ModifyE" layoutX="331.0" layoutY="446.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="174.0" style="-fx-border-radius: 30;" text="Modifer" />
+            <TextField fx:id="Email_E" layoutX="530.0" layoutY="45.0" />
+            <TextField fx:id="Type_E" layoutX="530.0" layoutY="114.0" />
+            <TextField fx:id="Duré" layoutX="530.0" layoutY="247.0" />
+            <TextField fx:id="num_e" layoutX="353.0" layoutY="343.0" />
+            <Label layoutX="427.0" layoutY="48.0" prefHeight="19.0" prefWidth="78.0" text="Email">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="72.0" layoutY="117.0" prefHeight="19.0" prefWidth="78.0" text="Prenom">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="427.0" layoutY="117.0" prefHeight="19.0" prefWidth="78.0" text="Type">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="418.0" layoutY="186.0" prefHeight="19.0" prefWidth="98.0" text="Date_contract">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="416.0" layoutY="250.0" prefHeight="19.0" prefWidth="100.0" text="Duré_contract">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="227.0" layoutY="346.0" prefHeight="19.0" prefWidth="78.0" text="Numero">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="Date_con" layoutX="530.0" layoutY="183.0" prefHeight="25.0" prefWidth="149.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
